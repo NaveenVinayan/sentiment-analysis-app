@@ -7,8 +7,9 @@ from sklearn.metrics import classification_report
 import joblib
 import os
 
-# Path to your CSV
+# Path of CSV
 DATA_PATH = "ml/EmotionDetection.csv"
+
 MODEL_PATH = "ml/sentiment_model.pkl"
 
 # Load dataset
@@ -22,7 +23,7 @@ X_train, X_test, y_train, y_test = train_test_split(
     df["text"], df["Emotion"], test_size=0.2, random_state=42, stratify=df["Emotion"]
 )
 
-# Create pipeline: TF-IDF + Logistic Regression
+# Create pipeline
 pipeline = Pipeline([
     ("tfidf", TfidfVectorizer(max_features=20000, ngram_range=(1,2))),
     ("clf", LogisticRegression(
@@ -42,6 +43,6 @@ y_pred = pipeline.predict(X_test)
 print("Evaluating model...")
 print(classification_report(y_test, y_pred))
 
-# Save model
+# Save
 joblib.dump(pipeline, MODEL_PATH)
 print(f"Model saved at {MODEL_PATH}")

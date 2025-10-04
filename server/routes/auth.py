@@ -174,5 +174,5 @@ def get_feedbacks():
     return jsonify({
         "feedbacks": data,
         "success": True,
-        "message": "Feedback retrieved successfully",
+        "message": "Feedbacks recieved successfully",
         })

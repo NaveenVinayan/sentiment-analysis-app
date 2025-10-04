@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useAuth } from "../../context/authContext";
 
 const AdminDashboard = () => {
   const [feedbacks, setFeedbacks] = useState([]);
-  const { user } = useAuth()
+  
+  
   useEffect(() => {
     const fetchFeedbacks = async () => {
       try {

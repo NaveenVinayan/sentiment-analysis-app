@@ -43,19 +43,17 @@ const Homepage = () => {
         ) : (
           <div className="min-h-screen bg-gray-50 flex justify-center items-center px-4 ">
             <div className="bg-white shadow-xl rounded-2xl p-8 max-w-lg w-full border border-gray-100">
-              {/* Title */}
               <h2 className="text-2xl font-bold text-gray-800 mb-2 text-center">
                 Submit Your Feedback
               </h2>
 
-              {/* Intro Text */}
               <p className="text-gray-600 text-center mb-6">
                 Please share your experience of the platform, which helps to improve!
               </p>
 
-              {/* Form */}
+           
               <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Rating */}
+                
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
                     Rating <span className="text-red-500">*</span>
@@ -77,7 +75,7 @@ const Homepage = () => {
                   </div>
                 </div>
 
-                {/* Comments */}
+                
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
                     Comments <span className="text-red-500">*</span>
@@ -92,7 +90,7 @@ const Homepage = () => {
                   ></textarea>
                 </div>
 
-                {/* Suggestions */}
+                
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
                     Suggestions (Optional)
@@ -106,7 +104,7 @@ const Homepage = () => {
                   ></textarea>
                 </div>
 
-                {/* Submit Button */}
+                
                 <button
                   type="submit"
                   className={`w-full py-3 rounded-lg text-white font-semibold transition bg-teal-600 hover:bg-teal-700`}

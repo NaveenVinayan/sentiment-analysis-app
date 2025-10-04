@@ -7,7 +7,6 @@ import { ToastContainer } from 'react-toastify'
 const Login = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const [error, setError] = useState(null)
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
   const { login } = useAuth()
@@ -31,9 +30,9 @@ const Login = () => {
       setLoading(false)
     } catch (error) {
       if (error.response && !error.response.data.success) {
-        setError(error.response.data.error)
+        alert(error.response.data.error)
       } else {
-        setError("Server Error")
+        alert("Server Error")
       }
     }
   }

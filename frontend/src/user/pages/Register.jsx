@@ -8,7 +8,6 @@ const Register = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [confirmPassword, setConfirmPassword] = useState("")
-  const [error, setError] = useState(null)
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
   const { login } = useAuth()
@@ -35,9 +34,9 @@ const Register = () => {
 
       } catch (error) {
         if (error.response && !error.response.data.success) {
-          setError(error.response.data.error)
+          alert(error.response.data.error)
         } else {
-          setError("Server Error")
+          alert("Server Error")
         }
       } finally {
         setLoading(false)
